@@ -1,65 +1,67 @@
-//  document
-//    .getElementById("menuVocabulary")
-//    .addEventListener("click", showVocabulary);
-
-
 /*=========================================
     PAGE NAVIGATION
 =========================================*/
 
-const pages = document.querySelectorAll(".page");
 
-function showPage(pageId){
-
-    pages.forEach(page => {
-        page.classList.remove("active");
-    });
-
-    document
-        .getElementById(pageId)
-        .classList.add("active");
-}
+/*=========================================
+    DICTIONARY MENU
+=========================================*/
 
 
-document.getElementById("menuDashboard")
-.onclick = () => showPage("dashboardPage");
-
-document.getElementById("menuDictionary")
-.onclick = () => showPage("dictionaryPage");
-
-document.getElementById("menuTranslate")
-.onclick = () => showPage("translatePage");
-
-document.getElementById("menuVocabulary")
-.onclick = () => showPage("vocabularyPage");
-
-document.getElementById("menuGrammar")
-.onclick = () => showPage("grammarPage");
-
-document.getElementById("menuListening")
-.onclick = () => showPage("listeningPage");
-
-document.getElementById("menuSpeaking")
-.onclick = () => showPage("speakingPage");
-
-document.getElementById("menuConversation")
-.onclick = () => showPage("conversationPage");
-
-document.getElementById("menuQuiz")
-.onclick = () => showPage("quizPage");
-
-document.getElementById("menuProgress")
-.onclick = () => showPage("progressPage");
-
-document.getElementById("menuFavorites")
-.onclick = () => showPage("favoritesPage");
-
-document.getElementById("menuSettings")
-.onclick = () => showPage("settingsPage");
+//  showPage("dashboardPage");
 
 
 
-showPage("dashboardPage");
+/*=========================================
+    DICTIONARY
+=========================================*/
 
+const menuDictionary =
+document.getElementById("menuDictionary");
+
+const dictionaryModal =
+document.getElementById("dictionaryModal");
+
+const btnCloseDictionary =
+document.getElementById("btnCloseDictionary");
+
+menuDictionary.onclick = function(){
+
+    dictionaryModal.classList.add("show");
+
+};
+
+btnCloseDictionary.onclick = function(){
+
+    dictionaryModal.classList.remove("show");
+
+};
+
+
+/*=========================================
+    TRANSLATE
+=========================================*/
+
+
+const menuTranslate =
+document.getElementById("menuTranslate");
+
+const translateModal =
+document.getElementById("translateModal");
+
+const btnCloseTranslate =
+document.getElementById("btnCloseTranslate");
+
+menuTranslate.onclick = function(){
+
+    translateModal.classList.add("show");
+
+};
+
+btnCloseTranslate.onclick = function(){
+
+    translateModal.classList.remove("show");
+
+};
 
 

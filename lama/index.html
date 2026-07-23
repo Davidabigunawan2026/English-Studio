@@ -22,10 +22,16 @@
     <header>
 
         <div class="logo">
+        <!--    <img
+                src="logo/logo_GB.png"
+                class="header-logo"
+                alt="Logo">
+        -->
 
-            📘 English Learning Studio
+               📘 English Learning Studio
 
         </div>
+
 
         <div class="header-right">
 
@@ -44,80 +50,135 @@
     </header>
 
 
-    <!--==================================================
-        MAIN
-    ==================================================-->
+<!--==================================================
+    MAIN
+===================================================-->
 
-    <main>
-
-        <!--==============================
-            SIDEBAR
-        ==============================-->
-
-        <aside>
-            <ul>
-
-                <li id="menuDashboard">📊 Dashboard</li>
-                <li id="menuDictionary">📚 Dictionary</li>
-                <li id="menuTranslate">🌐 Translate</li>
-                <li id="menuVocabulary">📖 Vocabulary</li>
-                <li id="menuGrammar">📘 Grammar</li>
-                <li id="menuListening">🎧 Listening</li>
-                <li id="menuSpeaking">🎤 Speaking</li>
-                <li id="menuConversation">💬 Conversation</li>
-                <li id="menuQuiz">📝 Quiz</li>
-                <li id="menuProgress">📈 Progress</li>
-                <li id="menuFavorites">⭐ Favorites</li>
-                <li id="menuSettings">⚙ Settings</li>
-
-            </ul>
-        </aside>
+<main>
 
 
 
-
-
-    <!--==============================
+<!--==============================
         CONTENT
-    =================================  -->
+=================================  -->
        
-      
-    <section id="content">
+     
+<section id="content">
 
+           <img
+                src="logo/logo_GB.png"
+                alt="Logo"
+                class="img-logo">
+        
             
-    <!--  =============== DASHBOARD =============  -->
+<!--  =============== DASHBOARD =============  -->
+<section id="dashboardPage" class="page active">
 
-    <section id="dashboardPage" class="page active">  
+    <div class="hero">
 
-        <div class="welcome">
-                <h1>Welcome to English Studio</h1>
-                <p class="subtitle">
-                    Learn English Every Day
-                </p>
-                <div class="goal-box">
-                    <h2>
-                        Good Evening, Gunawan 👋
-                    </h2>
-                    <p>
-                        Today's Goal
+        <div class="hero-overlay">
+
+            <div class="hero-title">
+
+
+
+                <div>
+
+                    <h1>
+                        English Learning Studio
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        One Word, One Step, Every Day
                     </p>
-                    <ul>
-                        <li>✅ Learn 10 New Words</li>
-                        <li>✅ Complete 1 Grammar Lesson</li>
-                        <li>✅ Finish Today's Quiz</li>
-                    </ul>
-                    <button id="btnStart">
-                        Start Learning
-                    </button>
+
                 </div>
+
             </div>
 
-        </section>
+            <p class="hero-text">
+
+                Welcome back, Gunawan.<br>
+
+                Learn English with Dictionary,
+                Translate, Grammar,
+                Listening, Speaking and Quiz
+                in one modern application.
+
+            </p>
+
+            <button id="btnStart">
+                Start Learning
+            </button>
+
+
+            <!--  =============== HERO MENU =============  -->
+
+            <div class="hero-menu">
+
+                    <div class="menu-card" id="menuDictionary">
+                        <div class="menu-icon">📚</div>
+                        <h3>Dictionary</h3>
+                    </div>
+
+                    <div class="menu-card" id="menuTranslate">
+                        <div class="menu-icon">🌐</div>
+                        <h3>Translate</h3>
+                    </div>
+
+ 
+                    <div class="menu-card" id="menuListeningSpeaking">
+                        <div class="menu-icon">🎧</div>
+                        <h3>Listening & Speaking </h3>
+                    </div>
+
+                    <div class="menu-card" id="menuConversation">
+                        <div class="menu-icon">💬</div>
+                        <h3>Conversation</h3>
+                    </div>
+
+                    <div class="menu-card" id="menuQuiz">
+                        <div class="menu-icon">📝</div>
+                        <h3>Quiz</h3>
+                    </div>
+
+                    <div class="menu-card" id="menuProgress">
+                        <div class="menu-icon">📈</div>
+                        <h3>Progress</h3>
+                    </div>
+
+                    <div class="menu-card" id="menuFavorites">
+                        <div class="menu-icon">⭐</div>
+                        <h3>Favorites</h3>
+                    </div>
+
+                    <div class="menu-card" id="menuSettings">
+                        <div class="menu-icon">⚙</div>
+                        <h3>Settings</h3>
+                    </div>
+
+                </div>
+          
+        </div>
+
+    </div>
+
+</section>
 
 
 
-    <!--  =============== DICTIONARY =============  -->
-        <section id="dictionaryPage" class="page">
+
+<!--  =============== DICTIONARY =============  -->
+
+    <div id="dictionaryModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                id="btnCloseDictionary"
+                class="modal-close">
+                ✖
+            </button>
 
             <h1>📚 Dictionary</h1>
 
@@ -129,67 +190,206 @@
                     placeholder="Type an English word...">
 
                 <button id="btnSearch">
-
                     Search
-
                 </button>
 
             </div>
 
-
             <div class="dictionary-result">
+                <div class="word-header">
+                    <h2 id="word"></h2>
+                    <button id="btnSpeakWord">
+                        🔊
+                    </button>
+                </div>
 
-                <h2 id="word"></h2>
                 <p id="phonetic"></p>
                 <p id="partOfSpeech"></p>
-
                 <h3>🇺🇸 English Meaning</h3>
                 <p id="meaning"></p>
-
-                <br>
                 <h3>🇮🇩 Indonesian Meaning</h3>
                 <p id="meaningID"></p>
-                <br>
                 <h3>📝 Example</h3>
-                <p id="example"></p>
+                <div class="example-box">
+
+                    <div class="example-content">
+                        <p id="example"></p>
+                        <p id="exampleID"></p>
+                    </div>
+
+                    <button id="btnSpeakExample">
+                        🔊
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--  ============== TRANSLATE ===================  -->
+
+    <div id="translateModal" class="modal">
+
+        <div class="modal-content">
+
+                <button
+                    id="btnCloseTranslate"
+                    class="modal-close">
+                    ✖
+                </button>
+
+
+                <h1>🌐 Translate</h1>
+
+                <div class="translate-box">
+
+                    <div class="translate-input">
+
+                        <textarea
+                            id="txtTranslate"
+                            placeholder="Type text here..."></textarea>
+
+                        <button
+                            id="btnClearTranslate"
+                            class="btn-clear">
+
+                            🗑 Clear
+
+                        </button>
+
+                    </div>
+
+                    <div class="translate-option">
+
+                        <label>From</label>
+
+                        <select id="fromLanguage">
+                            <option value="id">Indonesia</option>
+                            <option value="en">English</option>
+                        </select>
+
+                        <label>To</label>
+
+                        <select id="toLanguage">
+                            <option value="en">English</option>
+                            <option value="id">Indonesia</option>
+                        </select>
+
+                    </div>
+
+                
+                    <div class="translate-button">
+
+                        <button id="btnTranslate">
+                            🌐 Translate
+                        </button>
+                        <button id="btnSpeakInput">
+                            🔊 Speak Input
+                        </button>
+                        <button id="btnSpeakResult">
+                            🔊 Speak Result
+                        </button>
+
+                    </div>
+
+
+                    <div class="translate-result">
+
+                        <h3>Translation Result</h3>
+                        <p id="translateResult"></p>
+
+                    </div>
+
+                </div>
+
+
+        </div>
+
+    </div>
+
+
+<!--==================================================
+LISTENING & SPEAKING
+==================================================-->
+
+    <div id="listeningModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                id="btnCloseListening"
+                class="modal-close">
+                ✖
+            </button>
+
+            <h1>🎙 Listening & Speaking</h1>
+
+            <p class="subtitle">
+                Improve your listening and speaking skills.
+            </p>
+
+            <div class="listen-wrapper">
+
+                <!--================ LEFT ================-->
+
+                <div class="listen-left">
+                    <h2>Sentence</h2>
+
+                    <textarea
+                        id="listenText"
+                        placeholder="Type English text here...">
+                    </textarea>
+
+                    <div class="listen-buttons">
+                        <button id="btnPlayVoice">
+                            🔊 Play
+                        </button>
+
+                        <button id="btnPauseVoice">
+                            ⏸ Pause
+                        </button>
+
+                        <button id="btnStopVoice">
+                            ⏹ Stop
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--================ RIGHT ================-->
+
+                <div class="listen-right">
+
+                    <h2>Speaking</h2>
+                    <button id="btnStartSpeak">
+                        🎤 Start Speaking
+                    </button>
+
+                    <button id="btnStopSpeak">
+                        ⏹ Stop
+                    </button>
+
+                    <h3>You Said</h3>
+
+                    <div id="speechResult">
+                        Waiting...
+                    </div>
+
+                </div>
 
             </div>
 
+        </div>
 
-
-        </section>
-
-
-
-
-<!--  ============== TRANSLATE ===================  -->
-        <section id="translatePage" class="page">
-
-        </section>
+    </div>
 
 
 
-
-<!--  ============== TRANSLATE ===================  -->
-
-        <section id="grammarPage" class="page">
-
-           
-        </section>
-
-
-        
-        <section id="vocabularyPage">
-            
-        </section>
-
-
-
-
-    </section>
 
     
-
 
 
 
@@ -203,7 +403,7 @@
 
     <footer>
 
-        © 2026 English Studio
+        © 2026 Gunawan David A
         <br>
         One Word, One Step, Every Day
 
@@ -211,8 +411,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/dictionary.js"></script>
-
-
+    <script src="js/translate.js"></script>
 
 </body>
 

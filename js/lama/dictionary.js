@@ -1,6 +1,9 @@
 //  console.log("dictionary.js berhasil dimuat");
 
 
+
+
+
 /*==================================================
 DICTIONARY ENGINE
 ==================================================*/
@@ -41,18 +44,42 @@ async function searchWord(word){
         document.getElementById("meaning").textContent =
             item.meanings[0].definitions[0].definition;
 
+
         const meaningID =
-        await translateToIndonesia(
-        item.meanings[0].definitions[0].definition);
+        await translateToIndonesia(item.word);
 
         document.getElementById("meaningID").textContent =
         meaningID;
 
-        document.getElementById("example").textContent =
-            item.meanings[0].definitions[0].example || "";
+
+        let example = "";
+
+            for (const meaning of item.meanings) {
+
+                for (const definition of meaning.definitions) {
+
+                    if (definition.example) {
+                        example = definition.example;
+                        break;
+                    }
+
+                }
+
+                if (example) break;
+
+            }
+
+            document.getElementById("example").textContent =
+                example || "No example available.";
 
 
-     //   console.log(data);
+            const exampleID =
+            await translateToIndonesia(example);
+
+            document.getElementById("exampleID").textContent =
+            example
+                ? exampleID
+                : "";
 
     }
 
@@ -107,8 +134,49 @@ async function translateToIndonesia(text){
 
 
 
+/*==================================================
+SPEAK EXAMPLE
+==================================================*/
+
+const btnSpeakExample =
+document.getElementById("btnSpeakExample");
+
+if(btnSpeakExample){
+
+    btnSpeakExample.onclick = function(){
+
+        console.log("Speaker Example diklik");
+        const text =
+        document.getElementById("example").textContent;
+        console.log(text);
+
+        if(text){
+            speak(text);
+        }
+
+    };
+
+}
 
 
 
+/*==================================================
+SPEAK ENGINE
+==================================================*/
 
+function speak(text){
+
+    if(!text) return;
+
+    speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    speechSynthesis.speak(utterance);
+
+}
 
